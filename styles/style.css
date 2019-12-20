@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+}
+
+.split {
+  height: 100vh;
+  display: flex;
+}
+.cafe {
+  background: url(../images/q-u-i-Zrp9b3PMIy8-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+  background-position: center;
+}
+.container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 250, 245);
+}
+fieldset {
+  border: none;
+}
+label {
+  display: block;
+}
+legend {
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.input-label {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.note {
+  padding: 20px 0;
+  position: relative;
+  padding-left: 40px;
+}
+
+.notification {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+label .circle::before,
+label .circle::after {
+  height: 20px;
+  width: 35px;
+  content: "";
+  border-radius: 20px;
+  background-color: rgba(204, 204, 204, 0.671);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+label .circle::after {
+  height: 15px;
+  width: 15px;
+  border: 4px solid rgb(138, 138, 138);
+  background-color: rgb(73, 73, 73);
+  left: 0;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.notification:checked + .circle::after {
+  background-color: rgb(24, 149, 207);
+  transform: translateX(12px);
+  border: 4px solid rgb(108, 188, 224);
+}
+.notification:checked + .circle::before {
+  background-color: rgba(84, 208, 250, 0.507);
+  transition-delay: 0.2s;
+  transition-duration: 0.1s;
+}
+
+button {
+  all: unset;
+  border: 1px solid rgb(24, 149, 207);
+  padding: 5px 30px;
+  color: white;
+  background-color: rgb(24, 149, 207);
+  cursor: pointer;
+}
+.btns {
+  display: flex;
+  justify-content: space-around;
+}
+.cancel-btn {
+  color: rgb(24, 149, 207);
+  background-color: white;
+}
+
+button:hover {
+  box-shadow: 0px 0px 5px 0px rgb(117, 117, 117);
+}
+
+@media (max-width: 800px) {
+  body {
+    background-color: brown;
+  }
+  .split {
+    flex-direction: column;
+  }
+  .cafe {
+    height: 50%;
+    width: 100%;
+  }
+  .container {
+    height: 100%;
+    width: 100%;
+  }
+}
